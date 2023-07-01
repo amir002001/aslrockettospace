@@ -8,11 +8,24 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'app/styles/site.css' %}"/>
+    <style>
+@media (max-width: 768px) { /* Adjust the max-width value as needed */
+  .main {
+    display: none;
+  }
+}
+@media (min-width: 768px) { /* Adjust the max-width value as needed */
+  .mobile {
+    display: none;
+  }
+}
+    </style>
 </head>
 <body>
-<div class="container-fluid home-container">
+<div class="mobile">This website is not meant to be displayed on mobile</div>
+<div class="main container-fluid home-container">
     <div class="row home-row">
-        <div id="purpleSidebar" class="col-md-2">
+        <div id="purpleSidebar" class="col-sm-5 col-md-3">
             <div class="row home-row">
                 <div class="col-md-4 purpleSidebarContent">
                     {% load static %}
@@ -25,10 +38,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-10 pageContent">
+        <div class="col-md-9 pageContent">
             <div id="welcomeBackRow" class="row">
                 <div class="col-md-8">
-                    <div class="indexPageText">Welcome back, Alex.</div>
+                    <div class="welcomeText">Welcome back, Alex.</div>
                 </div>
                 <div class="col-md-4"></div>
             </div>
@@ -38,23 +51,23 @@
                 </div>
                 <div class="col-md-4"></div>
             </div>
-            <div class="row">
+            <div class="endme">
                 <a href="/draganddropgame">
-                    <div class="col-md-4 indexTile">
+                    <div class="col-md-3 indexTile">
                         <div class="indexPageText indexTileText">Mix and match</div>
                         {% load static %}
                         <img class="indexTileImg" src="{% static 'app/mixandmatchicon.png' %}"/>
                     </div>
                 </a>
                 <a href="/mcqgame">
-                    <div class="col-md-4 indexTile">
+                    <div class="col-md-3 indexTile">
                         <div class="indexPageText indexTileText">Flashcards</div>
                         {% load static %}
                         <img class="indexTileImg" src="{% static 'app/flashcardsicon.png' %}"/>
                     </div>
                 </a>
                 <a href="/flashcardmemorygame">
-                    <div class="col-md-4 indexTile">
+                    <div class="col-md-3 indexTile">
                         <div class="indexPageText indexTileText">A, B, Cs</div>
                         {% load static %}
                         <img class="indexTileImg" src="{% static 'app/abcsicon.png' %}"/>
